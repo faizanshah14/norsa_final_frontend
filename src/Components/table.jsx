@@ -141,8 +141,6 @@ export default function CustomizedTables(props) {
                             'Authorization': 'Bearer ' + token
                         }
                     })
-
-
                 }
                 // else if(props.data.title == "Merchants"){
 
@@ -257,7 +255,7 @@ export default function CustomizedTables(props) {
                 {/* {/* {console.log("rowsadar")} */}
 
                 <ButtonAppBar heading={props.data.title} />
-                <ActionButtons delete={handleDelete} dormint={dormint} url={props.data.addButtonUrl} />
+                { Client_id ? null : <ActionButtons delete={handleDelete} dormint={dormint} url={props.data.addButtonUrl} />}
                 <TableContainer component={Paper} style={{ maxHeight: 689 }}>
                     <Table stickyHeader className={classes.table} aria-label="customized table">
                         <TableHead className='asad'>
