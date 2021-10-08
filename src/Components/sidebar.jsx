@@ -37,6 +37,7 @@ import StoreIcon from '@material-ui/icons/Store';
 import Button from '@material-ui/core/Button';
 import axios from 'axios'
 import { CameraRoll } from '@material-ui/icons';
+import address from '../address'
 // import { ValueContainer } from 'react-select/src/components/containers';
 
 const drawerWidth = 240;
@@ -149,7 +150,7 @@ export default function PersistentDrawerLeft(props) {
 
       storage.removeItem('token');
     }
-    const response = await axios.get('http://localhost:3000/api/auth/logout', {
+    const response = await axios.get(address+'/api/auth/logout', {
 
       headers: {
 

@@ -23,7 +23,7 @@ import { selectData } from './helpers';
 import DeviceEditForm from './DeviceEdit';
 import ForeignData from './ForeignData';
 import { data } from './helpers';
-
+import address from '../address'
 
 let count = 1;
 
@@ -39,11 +39,6 @@ function Form(props) {
     DateDeposit: null, Client_id: "",
     NfcCard_id: "", Merchants_id: "",
     id: "", status: ""
-
-
-
-
-
   })
   const history = useHistory();
   let { id } = useParams();
@@ -57,7 +52,7 @@ function Form(props) {
     console.log(formData);
     if (token) {
     
-      response = await fetch('http://localhost:3000/api/issuancehistory/upsertIssuancehistory', {
+      response = await fetch(address+'/api/issuancehistory/upsertIssuancehistory', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -83,7 +78,7 @@ function Form(props) {
     const storage = window.localStorage;
     const token = storage.getItem("token");
 
-    var response = await fetch('http://localhost:3000/api/merchants/getMerchantById/' + id, {
+    var response = await fetch(address+'/api/merchants/getMerchantById/' + id, {
 
       method: 'GET',
       headers: {
@@ -93,7 +88,7 @@ function Form(props) {
     })
     response = await response.json();
     const MerchantType_id = response.MerchantType_id
-    response = await fetch('http://localhost:3000/api/merchants/getMerchantTypeDiscountByMerchantType_id/' + MerchantType_id, {
+    response = await fetch(address+'/api/merchants/getMerchantTypeDiscountByMerchantType_id/' + MerchantType_id, {
 
       method: 'GET',
       headers: {
@@ -128,9 +123,9 @@ function Form(props) {
     //   }
     // });
 
-    selectData('http://localhost:3000/api/clients/getAllClients', 'FirstName', 'id').then((data) => { console.log(data); setClientData(data) });
-    selectData('http://localhost:3000/api/merchants/getAllMerchants', 'Name', 'id').then((data) => { setMerchantData(data) });
-    selectData('http://localhost:3000/api/nfcCard/getAllNfcCards', 'number', 'id').then((data) => { setCardData(data) });
+    selectData(address+'/api/clients/getAllClients', 'FirstName', 'id').then((data) => { console.log(data); setClientData(data) });
+    selectData(address+'/api/merchants/getAllMerchants', 'Name', 'id').then((data) => { setMerchantData(data) });
+    selectData(address+'/api/nfcCard/getAllNfcCards', 'number', 'id').then((data) => { setCardData(data) });
     const storage = window.localStorage;
 
     token = storage.getItem("token");
@@ -185,12 +180,12 @@ function Form(props) {
 
           </div>
           <div>
-            <input name="Amount" value={formData && formData.Amount} placeholder="Amount" onChange={e => setFormData({ ...formData, Amount: e.target.value })} required />
+            <input name="Amount" value={formData && formData.Amount} placeholder="Montante" onChange={e => setFormData({ ...formData, Amount: e.target.value })} required />
 
           </div>
           <Select
             name="Client_id"
-            placeholder={<div>Client Name</div>}
+            placeholder={<div>kliente Code</div>}
             options={clientData}
             maxMenuHeight={150}
             onChange={e => {
@@ -211,7 +206,7 @@ function Form(props) {
 
           <Select
             name="NfcCard_id"
-            placeholder={<div>NFC Card Id</div>}
+            placeholder={<div>NFC Card</div>}
             options={nfcCardData}
             maxMenuHeight={150}
             onChange={e => setFormData({ ...formData, NfcCard_id: e.value })}
@@ -225,7 +220,7 @@ function Form(props) {
 
           <Select
             name="Merchants_id"
-            placeholder={<div>Merchant Id</div>}
+            placeholder={<div>Negoshi</div>}
             options={merchantData}
             maxMenuHeight={150}
             onChange={e => { setFormData({ ...formData, Merchants_id: e.value }); getPaybackPeriod(e.value) }}
@@ -240,7 +235,7 @@ function Form(props) {
           {formData.Merchants_id && <ForeignData data={data} heading="Merchant Detail" title="merchants" id={formData.Merchants_id} />}
           <Select
             name="PaybackPeriod"
-            placeholder={<div>Number Of Months</div>}
+            placeholder={<div>Periodo di Pago</div>}
             options={PaybackPeriod}
             maxMenuHeight={150}
             onChange={e => {

@@ -9,6 +9,7 @@ import Paper from '@material-ui/core/Paper';
 import { useHistory } from "react-router-dom";
 
 import axios from 'axios'
+import address from '../address'
 
 const useStyles = makeStyles(theme => ({
   layout: {
@@ -54,7 +55,7 @@ const LoginForm = (props) => {
     event.preventDefault();
     // alert("clicked theer");
     console.log(JSON.stringify(formData));
-    const { data } = await axios.post('http://localhost:3000/api/auth/login', formData);
+    const { data } = await axios.post(address+'/api/auth/login', formData);
     const accessToken = data.data['accessToken'];
     const role = data.data.isAdmin;
     console.log(data);

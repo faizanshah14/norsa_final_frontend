@@ -33,7 +33,7 @@ import 'react-notifications-component/dist/theme.css';
 import { store } from 'react-notifications-component';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import CheckIcon from '@material-ui/icons/Check';
-
+import address from '../address'
 
 
 const StyledTableCell = withStyles((theme) => ({
@@ -133,7 +133,7 @@ export default function CustomizedTables(props) {
 
             try {
                 if (Client_id) {
-                    response = await fetch('http://localhost:3000/api/issuancehistory/getIssuancehistoryByClientId/' + Client_id, {
+                    response = await fetch(address+'/api/issuancehistory/getIssuancehistoryByClientId/' + Client_id, {
 
                         method: 'GET',
                         headers: {
@@ -171,7 +171,7 @@ export default function CustomizedTables(props) {
                 //     let temp = []
                 //     data.map(async (item, index) => {
 
-                //         response = await fetch('http://localhost:3000/api/merchants/getMerchantTypeDiscountById/' + item.PaybackPeriod, {
+                //         response = await fetch(address+'/api/merchants/getMerchantTypeDiscountById/' + item.PaybackPeriod, {
 
                 //             method: 'GET',
                 //             headers: {

@@ -22,6 +22,7 @@ import Select from 'react-select';
 import { selectData } from './helpers';
 import ForeignData from './ForeignData';
 import { data } from './helpers';
+import address from '../address'
 
 
 let count = 0;
@@ -37,7 +38,7 @@ function Form(props) {
 
 
     // useEffect(()=>{
-    //     selectData('http://localhost:3000/api/merchants/getAllMerchantTypes', 'Title', 'id').then((data)=>{ set})
+    //     selectData(address+'/api/merchants/getAllMerchantTypes', 'Title', 'id').then((data)=>{ set})
     // })
 
     var response;
@@ -48,7 +49,7 @@ function Form(props) {
 
         console.log(formData);
         if (token) {
-            response = await fetch('http://localhost:3000/api/merchants/createMerchantType', {
+            response = await fetch(address+'/api/merchants/createMerchantType', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

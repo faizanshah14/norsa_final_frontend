@@ -22,7 +22,7 @@ import { store } from 'react-notifications-component';
 import { InputLabel } from '@material-ui/core';
 import { FormControl, Input, FormHelperText } from '@material-ui/core';
 
-
+import address from "../address"
 let count = 0;
 
 function Form(props) {
@@ -42,7 +42,7 @@ function Form(props) {
         token = storage.getItem("token");
         console.log(formData);
         if (token) {
-            response = await fetch('http://localhost:3000/api/merchants/upsertMerchant', {
+            response = await fetch(address+'/api/merchants/upsertMerchant', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -85,7 +85,7 @@ function Form(props) {
         else {
 
             // formId=props.match.params.id;
-            response = await fetch('http://localhost:3000/api/merchants/getMerchantById/' + id, {
+            response = await fetch(address+'/api/merchants/getMerchantById/' + id, {
 
                 method: 'GET',
                 headers: {

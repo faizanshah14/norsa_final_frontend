@@ -22,6 +22,7 @@ import Select from 'react-select';
 import { selectData } from './helpers';
 import ForeignData from './ForeignData';
 import { data } from './helpers';
+import address from "../address"
 
 let count = 0;
 
@@ -42,7 +43,7 @@ function Form(props) {
     token = storage.getItem("token");
     console.log(formData);
     if (token) {
-      response = await fetch('http://localhost:3000/api/merchants/upsertMerchant', {
+      response = await fetch(address+'/api/merchants/upsertMerchant', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -75,18 +76,17 @@ function Form(props) {
 
     //   }
     // });
-    selectData('http://localhost:3000/api/merchants/getAllMerchantTypes', 'Title', 'id').then((data) => { setDeviceData(data) });
+    selectData(address+'/api/merchants/getAllMerchantTypes', 'Title', 'id').then((data) => { setDeviceData(data) });
     const storage = window.localStorage;
     token = storage.getItem("token");
     if (!token) {
       console.log("in null");
       history.push('/login');
-
     }
     else {
 
       // // formId=props.match.params.id;
-      // response = await fetch('http://localhost:3000/api/clients/getClientById/' + id, {
+      // response = await fetch(address+'/api/clients/getClientById/' + id, {
 
       //   method: 'GET',
       //   headers: {

@@ -23,7 +23,7 @@ import AddIssuanceHistory from './Components/AddIssuanceHistory';
 import EditIssuanceHistory from './Components/EditIsuuanceHistory';
 import MerchantTypeAdd from './Components/MerchantTypeAdd'
 import MerchantTypeEdit from './Components/MerchantTypeEdit'
-
+import address from './address';
 
 function App() {
 
@@ -32,85 +32,86 @@ function App() {
   var dealerHeader = ['Code', 'Nomber kliente', 'ID/sedula', 'Kredito Maksimo', 'Group', 'Actions'];
   // var data = [['1-a001', 'antonia,nilza', '', 'Yes', 'm'], ['1-a003', 'albert,shermine', '1964090414', 'No', 'm'], ['1-a006', 'antersyn,rignald', '1950320212', 'No', 'm'], ['1-a007', 'antonia,joiseline c', '1976032204', 'Yes', 'm']];
   // const Form = lazy(() => import('./Components/form'));
+  
   var data = {
 
     client: {
-      deleteUrl: 'http://localhost:3000/api/clients/deleteClient/',
-      fetchUrl: 'http://localhost:3000/api/clients/getAllClients',
+      deleteUrl: address + '/api/clients/deleteClient/',
+      fetchUrl: address + '/api/clients/getAllClients',
       title: 'Kliente',
-      clientHeader: ['Code', 'First Name', 'Last Name', 'Email', 'Contact No', 'Works At', 'Fax Number', 'Max Borrow Amount','Status','Issuance History','Actions',],
-      clientColumns: ['Code', 'FirstName', 'LastName', 'Email', 'ContactNo', 'WorksAt', 'FaxNumber', 'MaxBorrowAmount','Status','issuanceHistory'],
+      clientHeader: ['Code', 'First Nomber', 'Last Nomber', 'Email', 'Tell Cellular', 'Ta traha na', 'Fax', 'Kredito Maksimo', 'Status', 'Issuance History', 'Actions',],
+      clientColumns: ['Code', 'FirstName', 'LastName', 'Email', 'ContactNo', 'WorksAt', 'FaxNumber', 'MaxBorrowAmount', 'Status', 'issuanceHistory'],
       editUrl: "/editclient/",
       viewUrl: "/viewclient/",
       addButtonUrl: '/addclient',
       issuanceHistoryUrl: '/issuancehistory/',
-      url:'/client'
+      url: '/client'
     },
     nfcCard: {
-      deleteUrl: 'http://localhost:3000/api/nfcCard/deleteNfcCard/',
-      fetchUrl: 'http://localhost:3000/api/nfcCard/getAllNfcCards',
-      title: 'NfC Cards',
-      clientHeader: [ 'Nomber', 'Status', 'Actions'],
-      clientColumns: ['number','status'],
+      deleteUrl: address + '/api/nfcCard/deleteNfcCard/',
+      fetchUrl: address + '/api/nfcCard/getAllNfcCards',
+      title: 'NFC Cards',
+      clientHeader: ['ID', 'Nomber', 'Status', 'Actions'],
+      clientColumns: ['id', 'number', 'status'],
       editUrl: "/editnfccard/",
       viewUrl: "/viewnfccard/",
       addButtonUrl: '/addnfccard',
-      url:'/nfccard'
+      url: '/nfccard'
     },
     device: {
-      deleteUrl: 'http://localhost:3000/api/device/deleteDevice/',
-      fetchUrl: 'http://localhost:3000/api/device/getAllDevices',
+      deleteUrl: address + '/api/device/deleteDevice/',
+      fetchUrl: address + '/api/device/getAllDevices',
       title: 'Device',
-      clientHeader: ['Name/Number','Status', 'Actions'],
-      clientColumns: ['nameNumber','status'],
+      clientHeader: ['ID', 'Nomber/Number', 'Status', 'Actions'],
+      clientColumns: ['id', 'nameNumber', 'status'],
       editUrl: "/editdevice/",
       viewUrl: "/viewdevice/",
       addButtonUrl: '/adddevice',
-      url:'/device'
+      url: '/device'
     },
     merchants: {
-      deleteUrl: 'http://localhost:3000/api/merchants/deleteMerchant/',
-      fetchUrl: 'http://localhost:3000/api/merchants/getAllMerchants',
+      deleteUrl: address + '/api/merchants/deleteMerchant/',
+      fetchUrl: address + '/api/merchants/getAllMerchants',
       title: 'Merchants',
-      clientHeader: ['Code', 'Name','AccountNo','BankName', 'Actions'],
-      clientColumns: ['Code','Name','AccountNo','BankName'],
+      clientHeader: ['Code Negoshi', 'Nomber Negoshi', 'Rekening', 'Bank', 'Actions'],
+      clientColumns: ['Code', 'Name', 'AccountNo', 'BankName'],
       editUrl: "/editmerchants/",
       viewUrl: "/viewmerchants/",
       addButtonUrl: '/addmerchants',
-      url:"/merchants"
+      url: "/merchants"
     },
     merchantType: {
-      deleteUrl: 'http://localhost:3000/api/merchants/deleteMerchantType/',
-      fetchUrl: 'http://localhost:3000/api/merchants/getAllMerchantTypes',
+      deleteUrl: address + '/api/merchants/deleteMerchantType/',
+      fetchUrl: address + '/api/merchants/getAllMerchantTypes',
       title: 'Merchant Type',
-      clientHeader: [ 'Title','Actions'],
-      clientColumns: [ 'Title'],
+      clientHeader: ['Nomber', 'Actions'],
+      clientColumns: ['Title'],
       editUrl: "/editmerchantType/",
       viewUrl: "/viewmerchantType/",
       addButtonUrl: '/addmerchantType',
-      url:"/merchants"
+      url: "/merchants"
     },
     issuanceHistory: {
-      deleteUrl: 'http://localhost:3000/api/issuancehistory/deleteIssuancehistory/',
-      fetchUrl: 'http://localhost:3000/api/issuancehistory/getAllIssuancehistories',
+      deleteUrl: address + '/api/issuancehistory/deleteIssuancehistory/',
+      fetchUrl: address + '/api/issuancehistory/getAllIssuancehistories',
       title: 'Issuance History',
-      clientHeader: ['Date','Client',  'Amount','Payment Period','Nfc Card','Merchant ID','Actions'],
-      clientColumns: ['id','Client_id','Amount','PaybackPeriod','NfcCard_id','Merchants_id'],
+      clientHeader: ['Fetcha', 'Kliente', 'Montante', 'Periodo di Pago', 'Nfc Card', 'Negoshi', 'Actions'],
+      clientColumns: ['id', 'Client_id', 'Amount', 'PaybackPeriod', 'NfcCard_id', 'Merchants_id'],
       editUrl: "/editissuancehistory/",
       viewUrl: "/viewissuancehistory/",
       addButtonUrl: '/adddissuancehistory',
-      url:'/issuancehistory'
+      url: '/issuancehistory'
     },
-    payments:{
-      deleteUrl: 'http://localhost:3000/api/issuancehistory/deleteIssuancehistory/',
-      fetchUrl: 'http://localhost:3000/api/issuancehistory/getAllIssuancehistoriesByAmountPaid',
+    payments: {
+      deleteUrl: address + '/api/issuancehistory/deleteIssuancehistory/',
+      fetchUrl: address + '/api/issuancehistory/getAllIssuancehistoriesByAmountPaid',
       title: 'Pending Payments',
-      clientHeader: ['Client_Id', 'Date Deposit', 'Amount Paid', 'Actions'],
-      clientColumns: ['Client_id','DateDeposit','AmountPaid'],
+      clientHeader: ['kliente Code', 'fecha di Deposito', 'Montante total pa fetcha', 'Actions'],
+      clientColumns: ['Client_id', 'DateDeposit', 'AmountPaid'],
       editUrl: "/editissuancehistory/",
       viewUrl: "/viewissuancehistory/",
       addButtonUrl: '/adddissuancehistory',
-      url:'/payments'
+      url: '/payments'
     }
   }
   var dealerData = [['1-a001', 'antonia,nilza', '', 'Yes', 'm'], ['1-a003', 'albert,shermine', '1964090414', 'No', 'm'], ['1-a006', 'antersyn,rignald', '1950320212', 'No', 'm'], ['1-a007', 'antonia,joiseline c', '1976032204', 'Yes', 'm']];
@@ -131,7 +132,7 @@ function App() {
         </Suspense>
       </Route> */}
       {/* <landingPage /> */}
-      <Route exact path="/" ><LoginForm showSidebar={showSideBar}/></Route>
+      <Route exact path="/" ><LoginForm showSidebar={showSideBar} /></Route>
       <Route exact path="/login" ><LoginForm showSidebar={showSideBar} /></Route>
       <Route exact path="/register" ><Register showSidebar={showSideBar} /></Route>
       <Route exact path="/merchant" >{<Home editUrl={'/editclient'} showSidebar={showSideBar} data={merchantData} header={merchantHeader} url={"/addmerchant"} title="Negoshi" />}</Route>
@@ -150,7 +151,7 @@ function App() {
       <Route exact path="/addclient" ><Form url='/client' heading="Kliente" /></Route>
       <Route exact path="/editclient" ><EditForm editUrl={'/editMerchant'} url='/client' heading="Kliente" /></Route>
       <Route exact path="/adddevice" ><DeviceAddForm url='/device' heading="Device" /></Route>
-      <Route exact path="/addnfccard" ><AddNfcCard url='/nfccard' heading="Nfc Card" /></Route>
+      <Route exact path="/addnfccard" ><AddNfcCard url='/nfccard' heading="NFC Card" /></Route>
       <Route exact path="/adddissuancehistory">< AddIssuanceHistory url='/issuancehistory' heading="Issue Card" /></Route>
       <Route exact path="/editdevice/:id" ><DeviceEditForm view={false} editUrl={'/editclient'} url='/device' heading="Device" /></Route>
       <Route exact path="/viewdevice/:id" ><DeviceEditForm view={true} editUrl={'/editclient'} url='/device' heading="Device" /></Route>

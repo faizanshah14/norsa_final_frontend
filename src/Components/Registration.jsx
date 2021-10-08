@@ -7,6 +7,7 @@ import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import { useHistory } from "react-router-dom";
+import address from '../address'
 
 
 const useStyles = makeStyles(theme => ({
@@ -61,7 +62,7 @@ const Register = (props) => {
     event.preventDefault();
     //incase you want to register the user you need to do that
     // alert("clicked theer");
-    const response = await fetch('http://localhost:3000/api/auth/signup', {
+    const response = await fetch(address+'/api/auth/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -70,7 +71,7 @@ const Register = (props) => {
       body: JSON.stringify(formData)
     });
 
-    // const response = await fetch('http://localhost:3000/api/auth/confirm-email?token=2vU2aN', {
+    // const response = await fetch(address+'/api/auth/confirm-email?token=2vU2aN', {
     //   method: 'GET', 
 
 

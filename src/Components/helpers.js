@@ -1,5 +1,5 @@
 // import { RATE_DURATIONS } from "./constants";
-
+import address from "../address";
 export const formatRate = (pricings = []) => {
   // let minRate = 0;
   let price = 0;
@@ -163,9 +163,9 @@ export  const selectData=async (url,column,id)=>{
 export   const data = {
 
   client: {
-    deleteUrl: 'http://localhost:3000/api/clients/deleteClient/',
-    fetchUrl: 'http://localhost:3000/api/clients/getAllClients',
-    getUrl:"http://localhost:3000/api/clients/getClientById/",
+    deleteUrl: address+'/api/clients/deleteClient/',
+    fetchUrl: address+'/api/clients/getAllClients',
+    getUrl:address+"/api/clients/getClientById/",
     title: 'Kliente',
     clientHeader: ['Code', 'FirstName', 'LastName', 'Email', 'ContactNo', 'WorksAt', 'FaxNumber', 'MaxBorrowAmount',,'Status','Actions'],
     clientColumns: ['Code', 'FirstName', 'LastName', 'Email', 'ContactNo', 'WorksAt', 'FaxNumber', 'MaxBorrowAmount','Status'],
@@ -175,9 +175,9 @@ export   const data = {
     url:'/client'
   },
   nfcCard: {
-    deleteUrl: 'http://localhost:3000/api/nfcCard/deleteNfcCard/',
-    fetchUrl: 'http://localhost:3000/api/nfcCard/getAllNfcCards',
-    getUrl:"http://localhost:3000/api/nfcCard/getNfcCardById/",
+    deleteUrl: address+'/api/nfcCard/deleteNfcCard/',
+    fetchUrl: address+'/api/nfcCard/getAllNfcCards',
+    getUrl:address+"/api/nfcCard/getNfcCardById/",
     title: 'NfC Cards',
     clientHeader: ['Id', 'Nomber', 'Status', 'Actions'],
     clientColumns: ['id','number','status'],
@@ -187,8 +187,8 @@ export   const data = {
     url:'/nfccard'
   },
   device: {
-    deleteUrl: 'http://localhost:3000/api/device/deleteDevice/',
-    fetchUrl: 'http://localhost:3000/api/device/getAllDevices',
+    deleteUrl: address+'/api/device/deleteDevice/',
+    fetchUrl: address+'/api/device/getAllDevices',
     title: 'Device',
     clientHeader: ['Id', 'nameNumber', 'batteryStatus','Status', 'Actions'],
     clientColumns: ['id','nameNumber','batteryStatus','status'],
@@ -198,9 +198,9 @@ export   const data = {
     url:'/device'
   },
   merchants: {
-    deleteUrl: 'http://localhost:3000/api/merchants/deleteMerchant/',
-    fetchUrl: 'http://localhost:3000/api/merchants/getAllMerchants',
-    getUrl:'http://localhost:3000/api/merchants/getMerchantById/',
+    deleteUrl: address+'/api/merchants/deleteMerchant/',
+    fetchUrl: address+'/api/merchants/getAllMerchants',
+    getUrl:address+'/api/merchants/getMerchantById/',
     title: 'Merchants',
     clientHeader: ['Id', 'Code', 'Name','MerchantType_id','AccountNo','BankName', 'Actions'],
     clientColumns: ['id','Code','Name','MerchantType_id','AccountNo','BankName'],
@@ -210,9 +210,9 @@ export   const data = {
     url:"/merchants"
   },
   merchantstype: {
-    deleteUrl: 'http://localhost:3000/api/merchants/deleteMerchantType/',
-    fetchUrl: 'http://localhost:3000/api/merchants/getAllMerchantTypes',
-    getUrl:'http://localhost:3000/api/merchants/getMerchantTypeById/',
+    deleteUrl: address+'/api/merchants/deleteMerchantType/',
+    fetchUrl: address+'/api/merchants/getAllMerchantTypes',
+    getUrl:address+'/api/merchants/getMerchantTypeById/',
     title: 'Merchant Type',
     clientHeader: ['Id', 'Title', 'Actions'],
     clientColumns: ['id','Title'],
@@ -222,8 +222,8 @@ export   const data = {
     url:"/merchants"
   },
   issuanceHistory: {
-    deleteUrl: 'http://localhost:3000/api/issuancehistory/deleteIssuancehistory/',
-    fetchUrl: 'http://localhost:3000/api/issuancehistory/getAllIssuancehistories',
+    deleteUrl: address+'/api/issuancehistory/deleteIssuancehistory/',
+    fetchUrl: address+'/api/issuancehistory/getAllIssuancehistories',
     title: 'Issuance History',
     clientHeader: ['Id', 'Date Time', 'Amount','Payment Period','Type Of Payment','Date Deposit', 'Client_Id','Nfc Card','Merchants_id','Actions'],
     clientColumns: ['id','DateTime','Amount','PaybackPeriod','TypeOfReturnPayment','DateDeposit','Client_id','NfcCard_id','Merchants_id'],

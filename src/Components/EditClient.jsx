@@ -21,7 +21,7 @@ import { store } from 'react-notifications-component';
 // import Select from 'react-select';
 import { InputLabel } from '@material-ui/core';
 import { FormControl, Input, FormHelperText } from '@material-ui/core';
-
+import address from "../address"
 
 let count = 0;
 
@@ -49,7 +49,7 @@ function Form(props) {
         token = storage.getItem("token");
         console.log(formData);
         if (token) {
-            response = await fetch('http://localhost:3000/api/clients/upsertClient', {
+            response = await fetch(address+'/api/clients/upsertClient', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -89,7 +89,7 @@ function Form(props) {
         }
         else {
             // formId=props.match.params.id;
-            response = await fetch('http://localhost:3000/api/clients/getClientById/' + id, {
+            response = await fetch(address+'/api/clients/getClientById/' + id, {
 
                 method: 'GET',
                 headers: {
@@ -132,26 +132,26 @@ function Form(props) {
 
 
                     <FormControl>
-                        <InputLabel htmlFor="FirstName">FirstName</InputLabel>
+                        <InputLabel htmlFor="FirstName">First Nomber</InputLabel>
                         <Input id="FirstName" name="FirstName" readOnly={props.view} value={formData && formData.FirstName} onChange={e => setFormData({ ...formData, FirstName: e.target.value })} readOnly={props.view} required />
                         {/* <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText> */}
                     </FormControl>
 
 
                     <FormControl>
-                        <InputLabel htmlFor="LastName">LastName</InputLabel>
+                        <InputLabel htmlFor="LastName">Last Nomber</InputLabel>
                         <Input id="LastName" name="LastName" readOnly={props.view} value={formData && formData.LastName} placeholder="Last Name" onChange={e => setFormData({ ...formData, LastName: e.target.value })} required />
                         {/* <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText> */}
                     </FormControl>
               
                     <FormControl>
-                        <InputLabel htmlFor="WorkNo">Work No</InputLabel>
+                        <InputLabel htmlFor="WorkNo">Tel Trabou</InputLabel>
                         <Input id="WorkNo" name="WorkNo" readOnly={props.view} value={formData && formData.WorkNo} placeholder="Works No" onChange={e => setFormData({ ...formData, WorkNo: e.target.value })} required />
                         {/* <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText> */}
                     </FormControl>
               
                     <FormControl>
-                        <InputLabel htmlFor="ContactNo">Contact No</InputLabel>
+                        <InputLabel htmlFor="ContactNo">Tel Celluar</InputLabel>
                         <Input id="ContactNo" readOnly={props.view} name="ContactNo" value={formData && formData.ContactNo} placeholder="Tele Phone No" onChange={e => setFormData({ ...formData, ContactNo: e.target.value })} required />
                         {/* <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText> */}
                     </FormControl>
@@ -159,7 +159,7 @@ function Form(props) {
 
                
                     <FormControl>
-                        <InputLabel htmlFor="WorksAt">Works At</InputLabel>
+                        <InputLabel htmlFor="WorksAt">Ta traha na</InputLabel>
                         <Input id="WorksAt" readOnly={props.view} name="WorksAt" value={formData && formData.WorksAt} placeholder="Works At" onChange={e => setFormData({ ...formData, WorksAt: e.target.value })} required />
                         {/* <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText> */}
                     </FormControl>
@@ -168,7 +168,7 @@ function Form(props) {
 
 
                     <FormControl>
-                        <InputLabel htmlFor="FaxNumber">Fax Number</InputLabel>
+                        <InputLabel htmlFor="FaxNumber">Fax</InputLabel>
                         <Input id="FaxNumber" readOnly={props.view} name="FaxNumber"  value={formData && formData.FaxNumber} placeholder="" onChange={e => setFormData({ ...formData, FaxNumber: e.target.value })} required />
                         {/* <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText> */}
                     </FormControl>
@@ -184,12 +184,12 @@ function Form(props) {
 
                     
                     <FormControl>
-                        <InputLabel htmlFor="MaxBorrowAmount">Max Borrow Amount</InputLabel>
+                        <InputLabel htmlFor="MaxBorrowAmount">kredito Maksimo</InputLabel>
                         <Input id="MaxBorrowAmount" name="MaxBorrowAmount" readOnly={props.view} value={formData && formData.MaxBorrowAmount} placeholder="Maz Borrow Amount" onChange={e => setFormData({ ...formData, MaxBorrowAmount: e.target.value })} required />
                         {/* <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText> */}
                     </FormControl>
                     <FormControl>
-                        <InputLabel htmlFor=" Dealer_id">Dealer</InputLabel>
+                        <InputLabel htmlFor=" Dealer_id">Rebendador</InputLabel>
                         <Input id=" Dealer_id" name=" Dealer_id" readOnly={props.view} value={formData && formData.Dealer_id} placeholder="Dealer Id" onChange={e => setFormData({ ...formData,  Dealer_id: e.target.value })} required />
                         {/* <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText> */}
                     </FormControl>

@@ -21,7 +21,7 @@ import { store } from 'react-notifications-component';
 // import Select from 'react-select';
 import { InputLabel } from '@material-ui/core';
 import { FormControl, Input, FormHelperText } from '@material-ui/core';
-
+import address from '../address'
 
 let count = 0;
 
@@ -90,7 +90,7 @@ function Form(props) {
         else {
             // formId=props.match.params.id;
             console.log("your id is "+id);
-            response = await fetch('http://localhost:3000/api/device/getDeviceById/' + id, {
+            response = await fetch(address+'/api/device/getDeviceById/' + id, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',

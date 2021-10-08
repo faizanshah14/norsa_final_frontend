@@ -21,6 +21,7 @@ import { store } from 'react-notifications-component';
 // import Select from 'react-select';
 import { InputLabel } from '@material-ui/core';
 import { FormControl, Input, FormHelperText } from '@material-ui/core';
+import address from "../address";
 
 
 let count = 0;
@@ -48,7 +49,7 @@ function Form(props) {
         token = storage.getItem("token");
         console.log(formData);
         if (token) {
-            response = await fetch('http://localhost:3000/api/nfcCard/upsertNfcCard', {
+            response = await fetch(address+'/api/nfcCard/upsertNfcCard', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -91,7 +92,7 @@ function Form(props) {
         else {
 
             // formId=props.match.params.id;
-            response = await fetch('http://localhost:3000/api/nfcCard/getNfcCardById/' + id, {
+            response = await fetch(address+'/api/nfcCard/getNfcCardById/' + id, {
 
                 method: 'GET',
                 headers: {
@@ -128,19 +129,19 @@ function Form(props) {
 
                     <FormControl>
                         <InputLabel htmlFor="number">Card Number</InputLabel>
-                        <Input id="number" name="number" value={formData && formData['number']} onChange={e => setFormData({ ...formData, number: e.target.value })} required readOnly={props.view} aria-describedby="my-helper-text" />
+                        <Input id="number" name="number" value={formData && formData['number']} onChange={e => setFormData({ ...formData, number: e.target.value , id : e.target.value})} required readOnly={props.view} aria-describedby="my-helper-text" />
                         {/* <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText> */}
                     </FormControl>
 
 
               
 
-
+{/* 
                     <FormControl>
                         <InputLabel htmlFor="id">Card Id</InputLabel>
                         <Input id="id" name="id" readOnly={props.view} value={formData && formData.id} placeholder="Device Id" onChange={e => setFormData({ ...formData, id: e.target.value })} required />
-                        {/* <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText> */}
-                    </FormControl>
+                        <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText>
+                    </FormControl> */}
 
                     <div>
                         <FormControlLabel

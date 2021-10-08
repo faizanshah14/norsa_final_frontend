@@ -23,6 +23,7 @@ import { selectData } from './helpers';
 import DeviceEditForm from './DeviceEdit';
 import ForeignData from './ForeignData';
 import { data } from './helpers';
+import address from '../address'
 
 
 let count = 1;
@@ -56,7 +57,7 @@ function Form(props) {
     token = storage.getItem("token");
     console.log(formData);
     if (token) {
-      response = await fetch('http://localhost:3000/api/issuancehistory/upsertIssuancehistory', {
+      response = await fetch(address+'/api/issuancehistory/upsertIssuancehistory', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -82,7 +83,7 @@ function Form(props) {
     const storage = window.localStorage;
     const token = storage.getItem("token");
 
-    var response = await fetch('http://localhost:3000/api/merchants/getMerchantById/' + id, {
+    var response = await fetch(address+'/api/merchants/getMerchantById/' + id, {
 
       method: 'GET',
       headers: {
@@ -92,7 +93,7 @@ function Form(props) {
     })
     response = await response.json();
     const MerchantType_id = response.MerchantType_id
-    response = await fetch('http://localhost:3000/api/merchants/getMerchantTypeDiscountByMerchantType_id/' + MerchantType_id, {
+    response = await fetch(address+'/api/merchants/getMerchantTypeDiscountByMerchantType_id/' + MerchantType_id, {
 
       method: 'GET',
       headers: {
@@ -127,9 +128,9 @@ function Form(props) {
     //   }
     // });
 
-    selectData('http://localhost:3000/api/clients/getAllClients', 'FirstName', 'id').then((data) => { console.log(data); setClientData(data) });
-    selectData('http://localhost:3000/api/merchants/getAllMerchants', 'Name', 'id').then((data) => { setMerchantData(data) });
-    selectData('http://localhost:3000/api/nfcCard/getAllNfcCards', 'number', 'id').then((data) => { setCardData(data) });
+    selectData(address+'/api/clients/getAllClients', 'FirstName', 'id').then((data) => { console.log(data); setClientData(data) });
+    selectData(address+'/api/merchants/getAllMerchants', 'Name', 'id').then((data) => { setMerchantData(data) });
+    selectData(address+'/api/nfcCard/getAllNfcCards', 'number', 'id').then((data) => { setCardData(data) });
     const storage = window.localStorage;
 
     token = storage.getItem("token");
@@ -140,7 +141,7 @@ function Form(props) {
     else {
 
       // // formId=props.match.params.id;
-      // response = await fetch('http://localhost:3000/api/clients/getClientById/' + id, {
+      // response = await fetch(address+'/api/clients/getClientById/' + id, {
 
       //   method: 'GET',
       //   headers: {

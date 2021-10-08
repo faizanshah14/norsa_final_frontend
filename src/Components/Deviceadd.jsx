@@ -21,7 +21,7 @@ import { store } from 'react-notifications-component';
 import Select from 'react-select';
 import ForeignData from './ForeignData';
 import {data} from './helpers'
-
+import address from '../address'
 
 let count = 0;
 
@@ -48,7 +48,7 @@ function Form(props) {
     token=storage.getItem("token");
     console.log(formData);
     if (token) {
-      response = await fetch('http://localhost:3000/api/device/upsertDevice', {
+      response = await fetch(address+'/api/device/upsertDevice', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

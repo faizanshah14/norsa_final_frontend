@@ -19,7 +19,7 @@ import ReactNotification from 'react-notifications-component';
 import 'react-notifications-component/dist/theme.css';
 import { store } from 'react-notifications-component';
 import Select from 'react-select';
-
+import address from '../address'
 let count = 0;
 
 function Form(props) {
@@ -44,7 +44,7 @@ function Form(props) {
     token=storage.getItem("token");
     console.log(formData);
     if (token) {
-      response = await fetch('http://localhost:3000/api/nfcCard/upsertNfcCard', {
+      response = await fetch(address+'/api/nfcCard/upsertNfcCard', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -59,10 +59,8 @@ function Form(props) {
       console.log("token");
   
       NotificationManager.success('Success message', 'Title here');
-      // history.push(props.url);
+      history.push(props.url);
     }
-
-
   }
 
 
@@ -121,31 +119,16 @@ function Form(props) {
 
         <ButtonAppBar heading={props.heading} />
         <form className="addForm" noValidate>
-
-
-
           <div>
-            <input name="number" value={formData && formData['number']} placeholder="Nfc Card Number" onChange={e => setFormData({ ...formData, "number": e.target.value })} required />
-
+            <input name="number" value={formData && formData['number']} placeholder="Number" onChange={e => setFormData({ ...formData, "number": e.target.value , "id" : e.target.value})} required />
           </div>
-         
-          <div>
+          {/* <div>
             <input name="id" value={formData && formData.id} placeholder="Device Id"  onChange={e => setFormData({ ...formData, id: e.target.value })} required />
-
-          </div>
-
-         
-
-
-
-          
-      
-
+          </div> */}
           <div>
             <FormControlLabel
               control={
                 <Checkbox
-          
                   onChange={(e) => { console.log(e.target.checked); setFormData({ ...formData, status: e.target.checked }) }}
                   icon={<CheckBoxOutlineBlankIcon fontSize="small" />}
                   checkedIcon={<CheckBoxIcon fontSize="small" />}
@@ -155,18 +138,7 @@ function Form(props) {
               label="In Aktivo"
             />
           </div>
-
-        
-
-
-
-
-
-
-
-
         </form>
-      
         <div class="btn-class">
         <Button onClick={addClient} className="submit" variant="outlined" color="primary" size="small">
           <Link >Submit</Link>
@@ -176,7 +148,6 @@ function Form(props) {
         </Button>
         </div>
       </div>
- 
     </React.Fragment>
   );
 }

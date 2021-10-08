@@ -24,6 +24,7 @@ import Select from 'react-select';
 import { selectData } from './helpers';
 import ForeignData from './ForeignData';
 import { data } from './helpers';
+import address from '../address'
 
 
 let count = 0;
@@ -48,7 +49,7 @@ function Form(props) {
 
         console.log(formData);
         if (token) {
-            response = await fetch('http://localhost:3000/api/merchants/getMerchantTypeById/' + id, {
+            response = await fetch(address+'/api/merchants/getMerchantTypeById/' + id, {
 
                 method: 'GET',
                 headers: {
@@ -61,7 +62,7 @@ function Form(props) {
             NotificationManager.success('Success message', 'Title here');
             setFormData(response)
             const MerchantType_id = id
-            response = await fetch('http://localhost:3000/api/merchants/getMerchantTypeDiscountByMerchantType_id/' + MerchantType_id, {
+            response = await fetch(address+'/api/merchants/getMerchantTypeDiscountByMerchantType_id/' + MerchantType_id, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -88,7 +89,7 @@ function Form(props) {
 
 
     // useEffect(()=>{
-    //     selectData('http://localhost:3000/api/merchants/getAllMerchantTypes', 'Title', 'id').then((data)=>{ set})
+    //     selectData(address+'/api/merchants/getAllMerchantTypes', 'Title', 'id').then((data)=>{ set})
     // })
 
 
@@ -99,7 +100,7 @@ function Form(props) {
 
     //     console.log(formData);
     //     if (token) {
-    //         response = await fetch('http://localhost:3000/api/merchants/createMerchantType', {
+    //         response = await fetch(address+'/api/merchants/createMerchantType', {
     //             method: 'POST',
     //             headers: {
     //                 'Content-Type': 'application/json',
@@ -127,7 +128,7 @@ function Form(props) {
                 if (item.id == "") {
                     api = "createMerchantTypeDiscount"
                 }
-                response = await fetch('http://localhost:3000/api/merchants/' + api, {
+                response = await fetch(address+'/api/merchants/' + api, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

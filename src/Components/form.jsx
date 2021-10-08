@@ -23,6 +23,7 @@ import { selectData } from './helpers';
 import AsyncSelect from 'react-select/async';
 import { data } from './helpers';
 import ForeignData from './ForeignData';
+import address from "../address";
 
 
 let count = 0;
@@ -66,7 +67,7 @@ function Form(props) {
     token = storage.getItem("token");
     console.log(formData);
     if (token) {
-      response = await fetch('http://localhost:3000/api/clients/getClientById/' + formData.Code, {
+      response = await fetch(address+'/api/clients/getClientById/' + formData.Code, {
 
         method: 'GET',
         headers: {
@@ -82,7 +83,7 @@ function Form(props) {
         alert("Client already exist")
         return;
       }
-      response = await fetch('http://localhost:3000/api/clients/upsertClient', {
+      response = await fetch(address+'/api/clients/upsertClient', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -133,7 +134,7 @@ function Form(props) {
     }
     else {
 
-      selectData('http://localhost:3000/api/clients/getAllClients', 'Code', 'id').then((data) => { setDealerData(data) });
+      selectData(address+'/api/clients/getAllClients', 'Code', 'id').then((data) => { setDealerData(data) });
 
 
       // // formId=props.match.params.id;
@@ -181,11 +182,11 @@ function Form(props) {
 
           </div>
           <div>
-            <input name="FirstName" value={formData && formData.FirstName} placeholder="First Name" onChange={e => setFormData({ ...formData, FirstName: e.target.value })} required />
+            <input name="FirstName" value={formData && formData.FirstName} placeholder="First Nomber" onChange={e => setFormData({ ...formData, FirstName: e.target.value })} required />
 
           </div>
           <div>
-            <input name="LastName" value={formData && formData.LastName} placeholder="Last Name" onChange={e => setFormData({ ...formData, LastName: e.target.value })} required />
+            <input name="LastName" value={formData && formData.LastName} placeholder="Last Nomber" onChange={e => setFormData({ ...formData, LastName: e.target.value })} required />
 
           </div>
           {/* <div>
@@ -194,19 +195,19 @@ function Form(props) {
           </div> */}
 
           <div>
-            <input name="WorkNo" value={formData && formData.WorkNo} placeholder="Works No" onChange={e => setFormData({ ...formData, WorkNo: e.target.value })} required />
+            <input name="WorkNo" value={formData && formData.WorkNo} placeholder="Tel Trabou" onChange={e => setFormData({ ...formData, WorkNo: e.target.value })} required />
 
           </div>
 
 
           <div>
-            <input name="ContactNo" value={formData && formData.ContactNo} placeholder="Tele Phone No" onChange={e => setFormData({ ...formData, ContactNo: e.target.value })} required />
+            <input name="ContactNo" value={formData && formData.ContactNo} placeholder="Tell Cellular" onChange={e => setFormData({ ...formData, ContactNo: e.target.value })} required />
 
           </div>
 
 
           <div>
-            <input name="WorksAt" value={formData && formData.WorksAt} placeholder="Works At" onChange={e => setFormData({ ...formData, WorksAt: e.target.value })} required />
+            <input name="WorksAt" value={formData && formData.WorksAt} placeholder="Ta traha na" onChange={e => setFormData({ ...formData, WorksAt: e.target.value })} required />
 
           </div>
 
@@ -214,7 +215,7 @@ function Form(props) {
 
 
           <div>
-            <input name="FaxNumber" value={formData && formData.faxNumber} placeholder="Fax No" onChange={e => setFormData({ ...formData, FaxNumber: e.target.value })} required />
+            <input name="FaxNumber" value={formData && formData.faxNumber} placeholder="Fax" onChange={e => setFormData({ ...formData, FaxNumber: e.target.value })} required />
 
           </div>
 
@@ -225,7 +226,7 @@ function Form(props) {
 
           </div>
           <div>
-            <input name="MaxBorrowAmount" value={formData && formData.MaxBorrowAmount} placeholder="Maz Borrow Amount" onChange={e => setFormData({ ...formData, MaxBorrowAmount: e.target.value })} required />
+            <input name="MaxBorrowAmount" value={formData && formData.MaxBorrowAmount} placeholder="Kredito Maksimo" onChange={e => setFormData({ ...formData, MaxBorrowAmount: e.target.value })} required />
 
           </div>
 
@@ -236,7 +237,7 @@ function Form(props) {
           </div> */}
           <Select
             name="Client_id"
-            placeholder={<div>Dealers</div>}
+            placeholder={<div>Rebendadors</div>}
             options={dealerData}
             maxMenuHeight={150}
             onChange={e => {
