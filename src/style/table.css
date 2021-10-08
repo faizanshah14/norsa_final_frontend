@@ -1,0 +1,305 @@
+
+.pagination{
+
+
+padding-bottom: 10px;
+padding-top: 10px;
+
+
+}
+td{
+
+padding:0!important;
+
+}
+th{
+
+    padding:5px!important;
+    
+    }
+
+    .btn-class{
+
+  margin-top:-44px;
+  margin-left: 2rem;
+
+    }
+    
+
+.MuiTableContainer-root{
+
+    overflow-x: auto;
+    
+
+
+
+
+}
+.foreignData{
+
+flex:100%!important;
+
+}
+.foreignData>div{
+
+ margin-right:10%;
+ margin-top: 1.5%;
+ padding-bottom: 1%;
+ padding-left: 5%;
+
+
+    
+    }
+    .foreignData label{
+
+padding-left:10%;
+
+
+    }
+.foreignData .titlehead{
+
+        margin-top: 1px !important;
+        padding-left: 0;
+        padding-left:1%;
+        padding-right: 1%;
+    }
+
+.foreignData{
+
+    background-color: #f1f1f1;
+    padding-top: 1%;
+    border: 1px solid #bdbcbc;
+    
+}
+
+
+.MuiAppBar-root {
+
+    width:100%!important;
+ 
+        border-radius: 20px 20px 0px 0px;
+    
+    }
+.titlehead .MuiToolbar-root{
+
+background-image:none!important;
+background-color: rgb(250,250,250)!important;
+color:black;
+font-weight:bold!important;
+
+
+}
+.editIcon{
+
+    height: 0.8em!important;
+
+}
+/* .form h5{
+
+padding-left:8px;
+
+
+} */
+.titlehead h5{
+
+   
+    color:grey;
+    font-weight:bold!important;
+    
+    
+    }
+.MuiDrawer-paper {
+    top: 83px!important;
+    background-color: rgb(236,241,241)!important;
+
+}
+
+.makeStyles-drawerPaper-7 {
+
+border:none;
+background-color: rgb(236,241,241)!important;
+
+
+}
+button{
+
+color:rgb(17, 10, 10);
+
+box-shadow: 0 1px 1.5px 1px rgb(0 0 0 / 12%)!important;
+-webkit-mask-image: none!important;
+transition: all 300ms!important ;
+border:none!important;
+z-index: 1!important;
+padding: 6px 12px!important;
+font-size: 14px!important;
+font-weight:400!important;
+line-height: 1.42857143!important;
+border-radius: 4px!important;
+
+
+}
+
+
+
+.makeStyles-drawerHeader-8 {
+    min-height: 83px!important;
+    background-color: grey;
+
+}
+
+.gridDelete a{
+
+    color:white!important;
+ }
+.asad{
+    color:white;
+}
+
+.MuiTableCell-root{
+
+    text-align: center!important;
+}
+
+
+.logo{
+
+
+    width: 164px;
+    position: relative;
+    left: 0%;
+    /* top: 0%; */
+    margin-top: 0%;
+    height: 74px;
+   
+}
+
+
+.logoname{
+
+    padding-left: 29%;
+}
+.signin{
+
+    position: absolute;
+    right:35px;
+ 
+    
+    
+    }
+
+.signout{
+
+    position: absolute;
+right:115px;
+
+
+}
+.signout .gridadd{
+
+background-color: transparent!important;
+width:fit-content!important;
+
+}
+.signin .gridadd{
+
+    background-color: transparent!important;
+    width:fit-content!important;
+    
+    }
+
+
+ a{
+    text-decoration: none;
+    color:black;
+    text-transform: none;
+ }
+
+ .gridDelete{
+
+    background-color: #E52B1C!important;
+    margin-left: -9px!important;
+ }
+
+
+button{
+
+color:black;
+
+}
+
+  
+.MuiButton-outlinedPrimary{
+
+color:black!important;
+
+}
+.MuiButton-outlined{
+
+width:5%!important;
+
+}
+ 
+  
+.makeStyles-root-2 >*{
+
+
+margin:5px!important;
+
+}
+  
+  
+.table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.asw{
+background-image: linear-gradient(to right,rgb(154,200,195),rgb(166,220,214),rgb(154,200,195),rgb(110,139,136),rgb(78,97,95),rgb(61,75,73),rgb(50,60,60),rgb(40,50,50))}
+.MuiToolbar-root{
+background-color: #5b8686;
+/* background-color:grey;
+background-image: linear-gradient(to right,rgb(154,200,195),rgb(166,220,214),rgb(154,200,195),rgb(110,139,136),rgb(78,97,95),rgb(61,75,73),rgb(50,60,60),rgb(40,50,50)) */
+
+}
+.MuiButton-root{
+
+font-family:"Roboto", "Helvetica", "Arial", sans-serif!important;
+font-size: 0.875rem;
+height:32px;
+
+
+}
+.sideBar{
+    position: relative!important;
+    
+    right: 75%;
+    z-index: 200!important;
+ 
+}
+
+.MuiTableRow-head{
+
+   background-color: black!important;
+}
+
+.actionButtons{
+margin-top:0.8%!important;
+margin-bottom: 0.8%!important;
+margin-left:10px;
+
+}
+button span{
+color:white;
+text-decoration: none;
+text-transform: none
+}
+
+.btn-class .submit {
+    background-color: #5b8686 !important;
+}
+.MuiCheckbox-colorSecondary.Mui-checked {
+    color: #5b8686 !important;
+}
