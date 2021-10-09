@@ -32,10 +32,6 @@ function Form(props) {
         batteryStatus: "",
         status: "",
         id: ""
-
-
-
-
     })
     const history = useHistory();
     let { id } = useParams();
@@ -54,9 +50,7 @@ function Form(props) {
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer ' + token
                 },
-
                 body: JSON.stringify(formData)
-
             });
 
             response = await response.json();
