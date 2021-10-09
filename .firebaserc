@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "challenge-3c7e1"
-  }
+    "default": "challenge-3c7e1",
+    "staging": "norsafrontend"
+  },
+  "targets": {}
 }
