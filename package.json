@@ -2,7 +2,7 @@
   "name": "myfirstreact",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://devsaffan.github.io/norsa_changes",
+  "homepage": "https://github.com/devshaffan/norsa_final_frontend",
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
