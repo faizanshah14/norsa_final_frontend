@@ -2,7 +2,7 @@
   "name": "myfirstreact",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://shaffan-NU.github.io/norsa_changes",
+  "homepage": "http://devsaffan.github.io/norsa_changes",
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
@@ -36,7 +36,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
