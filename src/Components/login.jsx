@@ -55,11 +55,12 @@ const LoginForm = (props) => {
     event.preventDefault();
     // alert("clicked theer");
     console.log(JSON.stringify(formData));
-    const { data } = await axios.post(address+'/api/auth/login', formData);
-    const accessToken = data.data['accessToken'];
-    const role = data.data.isAdmin;
-    console.log(data);
-    console.log(role);
+    // const { data } = await axios.post(address+'/api/auth/login', formData);
+    // const accessToken = data.data['accessToken'];
+    // const role = data.data.isAdmin;
+    // console.log(data);
+    // console.log(role);
+    const accessToken = "dada"
     if (accessToken) {
       const storage = window.localStorage;
       storage.setItem('token', accessToken);

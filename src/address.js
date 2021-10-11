@@ -1,3 +1,4 @@
 
-const address = "http://localhost:3000"
+const address = "https://norsa-app-new-back-end.herokuapp.com"
+
 export default address;
