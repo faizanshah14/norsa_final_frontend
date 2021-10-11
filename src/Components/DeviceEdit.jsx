@@ -44,7 +44,7 @@ function Form(props) {
         token = storage.getItem("token");
         console.log(formData);
         if (token) {
-            response = await fetch('http://localhost:3000/api/device/upsertDevice', {
+            response = await fetch(address+'/api/device/upsertDevice', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
