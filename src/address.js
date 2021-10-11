@@ -1,4 +1,4 @@
 
-const address = "https://norsa-app-new-back-end.herokuapp.com"
+const address = "https://norsabackend.herokuapp.com"
 
 export default address;
